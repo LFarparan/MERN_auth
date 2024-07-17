@@ -5,11 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome</title>
+
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
     <h1> Welcome home, <%= username %>
     </h1>
+    <% humanData.forEach((data)=> { %>
+        <a href="http://localhost:3000/user/<%= encodeURIComponent(data.firstname) %>">
+            <h4>
+                <%= data.firstname %>
+                    <%= data.lastname %>
+            </h4>
+        </a>
+        <% }) %>
 </body>
 
 </html>
